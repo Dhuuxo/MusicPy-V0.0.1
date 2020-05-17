@@ -1,15 +1,15 @@
 import pygame #You will need to install this module (pygame)
 pygame.mixer.init() #This command is needed because he go initialize the mixer
 #it is very important that you rename your music with minuscule letters without accents, spaces, or special characters. Try something like this: awesomemusic 
-#The music's will need to be in your Python Directory
-playlist = str(input("Do you wanna create a playlist (y or n)? ")) #the playlist has five spaces for songs, but you can increase the number of spaces by adding more variables
+#Music must be in the same location as the program
+playlist = str(input("Do you wanna create a playlist (y or n)? ")) #the playlist has five spaces for songs, but you can increase the number of spaces by adding more variables (as in the example)
 if playlist == "y": #To add a music you will write like this: awesomemusic.mp3
     m1 = str(input("Type the first song: "))
     m2 = str(input("Type the second song: "))
     m3 = str(input("Type the third song: "))
     m4 = str(input("Type the fourth song: "))
     m5 = str(input("Type the fifth song: "))
-
+    #mexample = str(input("Type the sixth song: "))
     pygame.mixer.music.load(str(m1))
     pygame.mixer.music.play()
     input("Press enter to play the next song")
@@ -24,6 +24,10 @@ if playlist == "y": #To add a music you will write like this: awesomemusic.mp3
     input("Press enter to play the next song")
     pygame.mixer.music.load(str(m5))
     pygame.mixer.music.play()
+    #input("Press enter to play the next song") Repeat the process as many times as you like!
+    #pygame.mixer.music.load(str(mexample))
+    #pygame.mixer.music.play()
+    
 elif playlist == "n":
     m = str(input("Type a name of one song: "))
     pygame.mixer.music.load(str(m))
