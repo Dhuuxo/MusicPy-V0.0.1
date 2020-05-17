@@ -1,0 +1,44 @@
+import pygame #Você vai precisar baixar esse módulo (pygame)
+pygame.mixer.init() #Esse comando é necessário pra inicializar o mixer
+#É muito importante que você renomeie a música com letras minúsculas sem espaços, acentos ou caracteres especiais. Tente algo do tipo: musicatop 
+#As músicas precisam estar no mesmo local que o programa
+playlist = str(input("Você deseja criar uma playlist (s or n)? ")) #A playlist tem 5 espaços para música, mas você pode aumentar a quantidade de músicas adicionando variáveis (como no exemplo)
+if playlist == "s": #Para adicionar uma música escreva assim: musicatop.mp3
+    m1 = str(input("Digite a primeira música: "))
+    m2 = str(input("Digite a segunda música: "))
+    m3 = str(input("Digite a terceira música: "))
+    m4 = str(input("Digite a quarta música: "))
+    m5 = str(input("Digite a quinta música: "))
+    #mexemplo = str(input("Digite a sexta música"))
+    pygame.mixer.music.load(str(m1))
+    pygame.mixer.music.play()
+    input("Aperte enter para tocar a proxima música")
+    pygame.mixer.music.load(str(m2))
+    pygame.mixer.music.play()
+    input("Aperte enter para tocar a proxima música")
+    pygame.mixer.music.load(str(m3))
+    pygame.mixer.music.play()
+    input("Aperte enter para tocar a proxima música")
+    pygame.mixer.music.load(str(m4))
+    pygame.mixer.music.play()
+    input("Aperte enter para tocar a proxima música")
+    pygame.mixer.music.load(str(m5))
+    pygame.mixer.music.play()
+    #input("Aperte enter para tocar a proxima música") Repita o processo quantas vezes desejar!
+    #pygame.mixer.music.load(str(mexemplo))
+    #pygame.mixer.music.play(
+elif playlist == "n":
+    m = str(input("Digite o nome da música: "))
+    pygame.mixer.music.load(str(m))
+    pygame.mixer.music.play()
+    proxm = str(input("Digite o nome de outra música: "))
+    input("Aperte enter para confirmar a proxima música")
+    pygame.mixer.music.load(str(proxm))
+    pygame.mixer.music.play()
+    while proxm != "":
+        proxm = str(input("Digite o nome de outra música: "))
+        input("Aperte enter para confirmar a proxima música")
+        pygame.mixer.music.load(str(proxm))
+        pygame.mixer.music.play()
+        if proxm == "":
+            break
